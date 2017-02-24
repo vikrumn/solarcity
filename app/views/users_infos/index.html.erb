@@ -1,0 +1,30 @@
+
+
+<header class="intro-header" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/f/ff/IvanpahRunning.JPG')">
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                  <div class="site-heading">
+                      <h1 class = "big-heading">See posts from around the world about what people are saying about solar energy!</h1>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </header>
+
+
+<h1>All Posts!</h1>
+  
+<% @users_info.each do |u| %>
+  <div class="media">
+                    <a class="pull-left" href="#">
+                        <img width = "64" height = "64" class="media-object" src="http://www.clipartkid.com/images/470/solar-panel-clip-art-images-free-for-commercial-use-anMwgV-clipart.png" alt="">
+                    </a>
+                    <div class="media-body">
+                        <h4 class="media-heading"><%= u.name %>
+                            <small><%= u.city %>, <%= u.date %></small>
+                        </h4>
+                        <%= u.interest %>
+                    </div>
+                </div>
+<% end %>

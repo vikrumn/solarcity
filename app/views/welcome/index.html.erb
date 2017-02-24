@@ -1,0 +1,48 @@
+<header class="intro-header" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/e/ee/Neapolitan_Sunset.jpg')">
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                  <div class="site-heading">
+                      <h1 class = "big-heading">Welcome! Are you interested in solar energy?</h1>
+                      <hr class="small">
+                      <span class="subheading">Tell us about your interest below!</span>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </header>
+
+<div class="container">
+      <% flash.each do |key, value| %>
+        <div class="alert alert-<%= key %>"><%= value %></div>
+      <% end %>
+      <%= yield %>
+</div>
+<div class = "form">
+<%= form_for :users_info, url: users_infos_path do |f| %>
+  <p>
+    <%= f.label :name %><br>
+    <%= f.text_field :name, class: "form-control" %>
+  </p>
+  <p>
+    <%= f.label :age %><br>
+    <%= f.text_field :age, class: "form-control" %>
+  </p>
+  <p>
+    <%= f.label :city %><br>
+    <%= f.text_field :city, class: "form-control"%>
+  </p>
+  <p>
+    <%= f.label :address %><br>
+    <%= f.text_field :address, class: "form-control"%>
+  </p>
+  <p>
+    <%= f.label "Tell the world what interests you about solar energy!" %><br>
+    <%= f.text_area :interest, class: "form-control" %>
+  </p>
+ 
+  <p>
+    <%= f.submit "Submit", class: "btn btn-default" %>
+  </p>
+<% end %>
+</div>
